@@ -42,8 +42,8 @@ useHead({
 })
 import { ref } from 'vue'
 
-const email = ref('programmer')
-const password = ref('Test@123')
+const email = ref('')
+const password = ref('')
 const remember = ref(false)
 const showPassword = ref(false)
 
