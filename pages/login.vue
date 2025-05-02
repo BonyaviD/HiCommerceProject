@@ -77,8 +77,7 @@ const handleLogin = async () => {
     // ذخیره توکن
     localStorage.setItem('token', token)
     authToken.value = token
-    console.log('توکن:', token)
-    await fetchUser()
+    navigateTo('/')
     // در اینجا می‌توانید کارهایی مانند ذخیره‌سازی توکن، ریدایرکت و غیره انجام دهید
   } catch (err) {
     console.error('خطا در درخواست ورود:', err)

@@ -1,5 +1,12 @@
+// types/User.ts
 export interface User {
     id: number
-    name: string
-    role: 'admin' | 'user' | 'guest'
+    userName: string
+    email: string
+    phoneNumber: string | null
+    emailConfirmed: boolean
+    isActive: boolean
+    phoneNumberConfirmed: boolean
+    role?: 'admin' | 'user' | 'guest' // اگر در دیتا نیست، می‌تونه اختیاری باشه
   }
+  

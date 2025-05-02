@@ -1,8 +1,16 @@
+<script setup>
+const token = useState('token')
+const user = useState('user')
+</script>
 <template>
-  <header class="header">
-    <NuxtLink to="/login" class="btn btn-primary">ورود</NuxtLink>
-    <NuxtLink to="/admin/dashboard" class="btn btn-secondary">admin panel</NuxtLink>
-  </header>
+  <div>
+    <header class="header">
+      <NuxtLink to="/login" class="btn btn-primary">ورود</NuxtLink>
+      <NuxtLink to="/admin/dashboard" class="btn btn-secondary">Admin panel</NuxtLink>
+    </header>
+<p>{{ token }}</p>
+<p>{{ user }}</p>
+  </div>
 </template>
 
 <style scoped>
