@@ -1,5 +1,8 @@
 <script setup>
 import { useHead } from '#imports'
+import { ref } from 'vue'
+import { useState } from '#app'
+const { authToken, user, fetchUser, logout } = useAuth()
 
 useHead({
   title: 'ورود کاور - صفحات | فرست - قالب مدیریت بوت‌استرپ',
@@ -22,34 +25,35 @@ useHead({
     { rel: 'stylesheet', href: '/assets/vendor/css/pages/page-auth.css' }
   ],
   script: [
-    { src: '/assets/vendor/js/helpers.js', body: true },
-    { src: '/assets/vendor/js/template-customizer.js', body: true },
-    { src: '/assets/js/config.js', body: true },
-    { src: '/assets/vendor/libs/jquery/jquery.js', body: true },
-    { src: '/assets/vendor/libs/popper/popper.js', body: true },
-    { src: '/assets/vendor/js/bootstrap.js', body: true },
-    { src: '/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js', body: true },
-    { src: '/assets/vendor/libs/hammer/hammer.js', body: true },
-    { src: '/assets/vendor/libs/i18n/i18n.js', body: true },
-    { src: '/assets/vendor/libs/typeahead-js/typeahead.js', body: true },
-    { src: '/assets/vendor/js/menu.js', body: true },
-    { src: '/assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js', body: true },
-    { src: '/assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js', body: true },
-    { src: '/assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js', body: true },
-    { src: '/assets/js/main.js', body: true },
-    { src: '/assets/js/pages-auth.js', body: true }
+    { src: '/assets/vendor/js/helpers.js'},
+    { src: '/assets/vendor/js/template-customizer.js'},
+    { src: '/assets/js/config.js'},
+    { src: '/assets/vendor/libs/jquery/jquery.js'},
+    { src: '/assets/vendor/libs/popper/popper.js'},
+    { src: '/assets/vendor/js/bootstrap.js'},
+    { src: '/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'},
+    { src: '/assets/vendor/libs/hammer/hammer.js'},
+    { src: '/assets/vendor/libs/i18n/i18n.js'},
+    { src: '/assets/vendor/libs/typeahead-js/typeahead.js'},
+    { src: '/assets/vendor/js/menu.js'},
+    { src: '/assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js' },
+    { src: '/assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js' },
+    { src: '/assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js'},
+    { src: '/assets/js/main.js'},
+    { src: '/assets/js/pages-auth.js'}
   ]
 })
-import { ref } from 'vue'
 
-const email = ref('')
-const password = ref('')
+const email = ref('programmer')
+const password = ref('Test@123')
 const remember = ref(false)
 const showPassword = ref(false)
 
 const togglePassword = () => {
   showPassword.value = !showPassword.value
 }
+
+
 
 const handleLogin = async () => {
   try {
@@ -65,21 +69,28 @@ const handleLogin = async () => {
       }),
     })
 
-    if (!res.ok) {
-      throw new Error('خطا در ورود به سیستم')
-    }
+    if (!res.ok)  throw new Error('خطا در ورود به سیستم')
 
     const data = await res.json()
-    console.log(data)
+    const token = data.result.token
+    const refreshToken = data.result.refreshToken
+    // ذخیره توکن
+    localStorage.setItem('token', token)
+    authToken.value = token
+    console.log('توکن:', token)
+    await fetchUser()
     // در اینجا می‌توانید کارهایی مانند ذخیره‌سازی توکن، ریدایرکت و غیره انجام دهید
   } catch (err) {
     console.error('خطا در درخواست ورود:', err)
   }
 }
+
+
 </script>
 
 <template>
     <div class="authentication-wrapper authentication-cover">
+      <!-- <div>Token{{ authToken }}</div> -->
       <div class="authentication-inner row m-0">
         <!-- /Left Text -->
         <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center">
