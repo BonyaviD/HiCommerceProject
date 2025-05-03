@@ -2,7 +2,7 @@
 import { useHead } from '#imports'
 import { ref } from 'vue'
 import { useState } from '#app'
-const { authToken, user, fetchUser, logout } = useAuth()
+const { authToken, user, fetchUser, logout, loginAndGetToken } = useAuth()
 
 useHead({
   title: 'ورود کاور - صفحات | فرست - قالب مدیریت بوت‌استرپ',
@@ -56,32 +56,17 @@ const togglePassword = () => {
 
 
 const handleLogin = async () => {
-  try {
-    // ارسال درخواست به API برای ورود
-    const res = await fetch('http://api.hicommerce.ir/api/Identity/Auth/Login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: email.value,
-        password: password.value,
-      }),
-    })
+  // await loginAndGetToken(email.value, password.value)
+  // console.log('Login successful', authToken.value)
+  // await fetchUser()
+  // console.log('User fetched', user.value)
+  navigateTo('/admin/dashboard')
+  // if(user.value.role === "Admin" || "Programmer"){
+  //   navigateTo('/admin/dashboard')
+  // }else if (user.value.role === "User") {
+  //   navigateTo('/')
+  // }
 
-    if (!res.ok)  throw new Error('خطا در ورود به سیستم')
-
-    const data = await res.json()
-    const token = data.result.token
-    const refreshToken = data.result.refreshToken
-    // ذخیره توکن
-    localStorage.setItem('token', token)
-    authToken.value = token
-    navigateTo('/')
-    // در اینجا می‌توانید کارهایی مانند ذخیره‌سازی توکن، ریدایرکت و غیره انجام دهید
-  } catch (err) {
-    console.error('خطا در درخواست ورود:', err)
-  }
 }
 
 

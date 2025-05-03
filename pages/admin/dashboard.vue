@@ -1,33 +1,52 @@
 <script setup>
-import { useHead } from '#imports'
+import { useHead } from "#imports";
 
-// داخل setup() یک صفحه یا layout مثل layouts/default.vue
 useHead({
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/assets/img/favicon/favicon.ico' },
+    { rel: "icon", type: "image/x-icon", href: "/assets/img/favicon/favicon.ico" },
 
     // Fonts and Icons
-    { rel: 'stylesheet', href: '/assets/vendor/fonts/boxicons.css' },
-    { rel: 'stylesheet', href: '/assets/vendor/fonts/fontawesome.css' },
-    { rel: 'stylesheet', href: '/assets/vendor/fonts/flag-icons.css' },
+    { rel: "stylesheet", href: "/assets/vendor/fonts/boxicons.css" },
+    { rel: "stylesheet", href: "/assets/vendor/fonts/fontawesome.css" },
+    { rel: "stylesheet", href: "/assets/vendor/fonts/flag-icons.css" },
 
     // Core CSS
-    { rel: 'stylesheet', href: '/assets/vendor/css/rtl/core.css' },
-    { rel: 'stylesheet', href: '/assets/vendor/css/rtl/theme-default.css' },
-    { rel: 'stylesheet', href: '/assets/css/demo.css' },
-    { rel: 'stylesheet', href: '/assets/vendor/css/rtl/rtl.css' },
+    { rel: "stylesheet", href: "/assets/vendor/css/rtl/core.css" },
+    { rel: "stylesheet", href: "/assets/vendor/css/rtl/theme-default.css" },
+    { rel: "stylesheet", href: "/assets/css/demo.css" },
+    { rel: "stylesheet", href: "/assets/vendor/css/rtl/rtl.css" },
 
     // Vendors CSS
-    { rel: 'stylesheet', href: '/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' },
-    { rel: 'stylesheet', href: '/assets/vendor/libs/typeahead-js/typeahead.css' },
-    { rel: 'stylesheet', href: '/assets/vendor/libs/apex-charts/apex-charts.css' }
+    { rel: "stylesheet", href: "/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" },
+    { rel: "stylesheet", href: "/assets/vendor/libs/typeahead-js/typeahead.css" },
+    { rel: "stylesheet", href: "/assets/vendor/libs/apex-charts/apex-charts.css" },
   ],
   script: [
-    { src: '/assets/vendor/js/helpers.js' },
-    { src: '/assets/vendor/js/template-customizer.js' },
-    { src: '/assets/js/config.js' }
-  ]
-})
+    // Helpers and Config
+    { src: "/assets/vendor/js/helpers.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/js/template-customizer.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/js/config.js", tagPosition: "bodyClose", body: true },
+
+    // Core JS
+    { src: "/assets/vendor/libs/jquery/jquery.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/libs/popper/popper.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/js/bootstrap.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/libs/hammer/hammer.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/libs/i18n/i18n.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/libs/typeahead-js/typeahead.js", tagPosition: "bodyClose", body: true },
+    { src: "/assets/vendor/js/menu.js", tagPosition: "bodyClose", body: true },
+
+    // Vendors JS
+    { src: "/assets/vendor/libs/apex-charts/apexcharts.js", tagPosition: "bodyClose", body: true },
+
+    // Main JS
+    { src: "/assets/js/main.js", tagPosition: "bodyClose", body: true },
+
+    // Page JS
+    { src: "/assets/js/dashboards-analytics.js", tagPosition: "bodyClose", body: true },
+  ],
+});
 </script>
 
 <template>
@@ -41,7 +60,14 @@ useHead({
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
               <span class="app-brand-logo demo">
-                <svg width="26px" height="26px" viewbox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg
+                  width="26px"
+                  height="26px"
+                  viewbox="0 0 26 26"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
                   <title>آیکن</title>
                   <defs>
                     <lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
@@ -58,8 +84,16 @@ useHead({
                       <g id="Login" transform="translate(519.000000, 244.000000)">
                         <g id="Logo" transform="translate(148.000000, 42.000000)">
                           <g id="icon" transform="translate(0.000000, 4.000000)">
-                            <path d="M13.8863636,4.72727273 C18.9447899,4.72727273 23.0454545,8.82793741 23.0454545,13.8863636 C23.0454545,18.9447899 18.9447899,23.0454545 13.8863636,23.0454545 C8.82793741,23.0454545 4.72727273,18.9447899 4.72727273,13.8863636 C4.72727273,13.5423509 4.74623858,13.2027679 4.78318172,12.8686032 L8.54810407,12.8689442 C8.48567157,13.19852 8.45300462,13.5386269 8.45300462,13.8863636 C8.45300462,16.887125 10.8856023,19.3197227 13.8863636,19.3197227 C16.887125,19.3197227 19.3197227,16.887125 19.3197227,13.8863636 C19.3197227,10.8856023 16.887125,8.45300462 13.8863636,8.45300462 C13.5386269,8.45300462 13.19852,8.48567157 12.8689442,8.54810407 L12.8686032,4.78318172 C13.2027679,4.74623858 13.5423509,4.72727273 13.8863636,4.72727273 Z" id="Combined-Shape" fill="#4880EA"></path>
-                            <path d="M13.5909091,1.77272727 C20.4442608,1.77272727 26,7.19618701 26,13.8863636 C26,20.5765403 20.4442608,26 13.5909091,26 C6.73755742,26 1.18181818,20.5765403 1.18181818,13.8863636 C1.18181818,13.540626 1.19665566,13.1982714 1.22574292,12.8598734 L6.30410592,12.859962 C6.25499466,13.1951893 6.22958398,13.5378796 6.22958398,13.8863636 C6.22958398,17.8551125 9.52536149,21.0724191 13.5909091,21.0724191 C17.6564567,21.0724191 20.9522342,17.8551125 20.9522342,13.8863636 C20.9522342,9.91761479 17.6564567,6.70030817 13.5909091,6.70030817 C13.2336969,6.70030817 12.8824272,6.72514561 12.5388136,6.77314791 L12.5392575,1.81561642 C12.8859498,1.78721495 13.2366963,1.77272727 13.5909091,1.77272727 Z" id="Combined-Shape2" fill="url(#linearGradient-1)"></path>
+                            <path
+                              d="M13.8863636,4.72727273 C18.9447899,4.72727273 23.0454545,8.82793741 23.0454545,13.8863636 C23.0454545,18.9447899 18.9447899,23.0454545 13.8863636,23.0454545 C8.82793741,23.0454545 4.72727273,18.9447899 4.72727273,13.8863636 C4.72727273,13.5423509 4.74623858,13.2027679 4.78318172,12.8686032 L8.54810407,12.8689442 C8.48567157,13.19852 8.45300462,13.5386269 8.45300462,13.8863636 C8.45300462,16.887125 10.8856023,19.3197227 13.8863636,19.3197227 C16.887125,19.3197227 19.3197227,16.887125 19.3197227,13.8863636 C19.3197227,10.8856023 16.887125,8.45300462 13.8863636,8.45300462 C13.5386269,8.45300462 13.19852,8.48567157 12.8689442,8.54810407 L12.8686032,4.78318172 C13.2027679,4.74623858 13.5423509,4.72727273 13.8863636,4.72727273 Z"
+                              id="Combined-Shape"
+                              fill="#4880EA"
+                            ></path>
+                            <path
+                              d="M13.5909091,1.77272727 C20.4442608,1.77272727 26,7.19618701 26,13.8863636 C26,20.5765403 20.4442608,26 13.5909091,26 C6.73755742,26 1.18181818,20.5765403 1.18181818,13.8863636 C1.18181818,13.540626 1.19665566,13.1982714 1.22574292,12.8598734 L6.30410592,12.859962 C6.25499466,13.1951893 6.22958398,13.5378796 6.22958398,13.8863636 C6.22958398,17.8551125 9.52536149,21.0724191 13.5909091,21.0724191 C17.6564567,21.0724191 20.9522342,17.8551125 20.9522342,13.8863636 C20.9522342,9.91761479 17.6564567,6.70030817 13.5909091,6.70030817 C13.2336969,6.70030817 12.8824272,6.72514561 12.5388136,6.77314791 L12.5392575,1.81561642 C12.8859498,1.78721495 13.2366963,1.77272727 13.5909091,1.77272727 Z"
+                              id="Combined-Shape2"
+                              fill="url(#linearGradient-1)"
+                            ></path>
                             <rect id="Rectangle" fill="url(#linearGradient-2)" x="0" y="0" width="7.68181818" height="7.68181818"></rect>
                           </g>
                         </g>
@@ -83,83 +117,366 @@ useHead({
 
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
-            <li class="menu-item active open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Dashboards">داشبوردها</div>
+
+            <li class="menu-item">
+              <a href="app-email.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-envelope"></i>
+                <div data-i18n="Email">صفحه اصلی فروشگاه</div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item active">
-                  <a href="index.html" class="menu-link">
-                    <div data-i18n="Analytics">تجزیه و تحلیل</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="dashboards-ecommerce.html" class="menu-link">
-                    <div data-i18n="eCommerce">تجارت الکترونیک</div>
-                  </a>
-                </li>
-              </ul>
             </li>
 
-            <!-- Layouts -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">طرح‌ها</div>
+                <div data-i18n="Layouts">مدیریت فروشگاه</div>
               </a>
 
               <ul class="menu-sub">
+                <!-- کالاها -->
                 <li class="menu-item">
-                  <a href="layouts-collapsed-menu.html" class="menu-link">
-                    <div data-i18n="Collapsed menu">منوی جمع شده</div>
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <div data-i18n="Products">کالاها</div>
                   </a>
+                  <ul class="menu-sub">
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Categories">دسته بندی کالاها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Manage Products">مدیریت کالاها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Brands">برندها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Bulk Price Edit">ویرایش گروهی قیمت‌ها</div></a>
+                    </li>
+                  </ul>
                 </li>
+
+                <!-- خصوصیت کالاها -->
                 <li class="menu-item">
-                  <a href="layouts-content-navbar.html" class="menu-link">
-                    <div data-i18n="Content navbar">نوار ناوبری محتوا</div>
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <div data-i18n="Product Attributes">خصوصیت کالاها</div>
                   </a>
+                  <ul class="menu-sub">
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Product Features">ویژگی کالاها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Product Specifications">مشخصات کالاها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Specification Pack">بسته مشخصات کالاها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Product Rating">امتیاز کالاها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Colors">رنگ‌ها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Knowledge Base">دانشنامه</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Product Slogan">شعار کالا</div></a>
+                    </li>
+                  </ul>
                 </li>
+
+                <!-- میانبرها -->
                 <li class="menu-item">
-                  <a href="layouts-content-navbar-with-sidebar.html" class="menu-link">
-                    <div data-i18n="Content nav + Sidebar">ناوبری محتوا + نوار کناری</div>
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <div data-i18n="Shortcuts">میانبرها</div>
                   </a>
+                  <ul class="menu-sub">
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Campaigns">کمپین‌ها</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Banner Showcase">بنرهای ویترین</div></a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link"><div data-i18n="Special Offers">پیشنهادات ویژه ویترین</div></a>
+                    </li>
+                  </ul>
                 </li>
+
                 <li class="menu-item">
-                  <a href="../horizontal-menu-template" class="menu-link" target="_blank">
-                    <div data-i18n="Horizontal">افقی</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">بدون منو</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div data-i18n="Without navbar">بدون نوار ناوبری</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div data-i18n="Fluid">شناور</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
-                    <div data-i18n="Container">دربرگیرنده</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-blank.html" class="menu-link">
-                    <div data-i18n="Blank">خالی</div>
+                  <a href="app-email.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-envelope"></i>
+                    <div data-i18n="Email">نظرات کاربران</div>
                   </a>
                 </li>
               </ul>
             </li>
 
+            <li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-credit-card"></i>
+    <div data-i18n="Financial Management">مدیریت مالی و فاکتورها</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- سفارشات (فاکتورها) -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Orders (Invoices)">سفارشات (فاکتورها)</div></a></li>
+    
+    <!-- تخفیفات -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Discounts">تخفیفات</div></a></li>
+    
+    <!-- کوپن های تخفیف -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Discount Coupons">کوپن های تخفیف</div></a></li>
+    
+    <!-- مالیات -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Taxes">مالیات</div></a></li>
+    
+    <!-- افزونه‌های حسابداری -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Accounting Plugins">افزونه‌های حسابداری</div></a></li>
+    
+    <!-- روش های ارسال سفارشات -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Shipping Methods">روش های ارسال سفارشات</div></a></li>
+    
+    <!-- روش های پرداخت -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Payment Methods">روش های پرداخت</div></a></li>
+    
+    <!-- حسابهای بانکی -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Bank Accounts">حسابهای بانکی</div></a></li>
+    
+    <!-- انبار ها -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Warehouses">انبار ها</div></a></li>
+  </ul>
+</li>
+
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-line-chart"></i>
+    <div data-i18n="Reports">گزارشات</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- گزارش جستجو در فروشگاه -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Search Reports">گزارش جستجو در فروشگاه</div></a></li>
+    
+    <!-- جستجوها در فروشگاه -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Searches in Store">جستجوها در فروشگاه</div></a></li>
+    
+    <!-- گزارش فروشگاه -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Store Report">گزارش فروشگاه</div></a></li>
+    
+    <!-- گزارش سفارشات -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Orders Report">گزارش سفارشات</div></a></li>
+    
+    <!-- گزارش کالاها -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Products Report">گزارش کالاها</div></a></li>
+    
+    <!-- گزارش فعالیت خریداران -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Buyer Activity Report">گزارش فعالیت خریداران</div></a></li>
+    
+    <!-- گزارش روش‌های ارسال -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Shipping Methods Report">گزارش روش‌های ارسال</div></a></li>
+    
+    <!-- گزارش روش‌های پرداخت -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Payment Methods Report">گزارش روش‌های پرداخت</div></a></li>
+    
+    
+  </ul>
+</li>
+
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-tools"></i>
+    <div data-i18n="Utility Tools">ابزار کمکی</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- ارسال وب پوش -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Web Push">ارسال وب پوش</div></a></li>
+    
+    <!-- برچسب آدرس مرسولات -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Shipping Address Labels">برچسب آدرس مرسولات</div></a></li>
+    
+    <!-- درج کالا از دیجی‌کالا -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Insert Products from Digikala">درج کالا از دیجی‌کالا</div></a></li>
+    
+    <!-- کمپین‌های تبلیغاتی -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Advertising Campaigns">کمپین‌های تبلیغاتی</div></a></li>
+    
+    <!-- گردونه شانس -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Spin the Wheel">گردونه شانس</div></a></li>
+    
+    <!-- ارسال کوپن تخفیف -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Send Discount Coupons">ارسال کوپن تخفیف</div></a></li>
+  </ul>
+</li>
+
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-file"></i>
+    <div data-i18n="Content Management">مدیریت محتوا</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- محتوا -->
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <div data-i18n="Content">محتوا</div>
+      </a>
+      <ul class="menu-sub">
+        <!-- اسلایدرها -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Sliders">اسلایدرها</div></a></li>
+        <!-- اسلایدر پیشرفته -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Advanced Sliders">اسلایدر پیشرفته</div></a></li>
+        <!-- مطالب و صفحات -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Posts and Pages">مطالب و صفحات</div></a></li>
+        <!-- ویجت ها -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Widgets">ویجت ها</div></a></li>
+        <!-- اخبار -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="News">اخبار</div></a></li>
+        <!-- برچسب ها -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Tags">برچسب ها</div></a></li>
+      </ul>
+    </li>
+
+    <!-- شخصی سازی قالب -->
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <div data-i18n="Template Customization">شخصی سازی قالب</div>
+      </a>
+      <ul class="menu-sub">
+        <!-- منو ها -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Menus">منو ها</div></a></li>
+        <!-- پاورقی وب سایت -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Website Footer">پاورقی وب سایت</div></a></li>
+        <!-- اعلانات صفحه اصلی وب سایت -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Homepage Announcements">اعلانات صفحه اصلی وب سایت</div></a></li>
+        <!-- صفحه تماس با ما -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Contact Us Page">صفحه تماس با ما</div></a></li>
+        <!-- اسکریپت ها -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Scripts">اسکریپت ها</div></a></li>
+        <!-- اضافات سرصفحه -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Header Add-ons">اضافات سرصفحه</div></a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-user"></i>
+    <div data-i18n="User Management">مدیریت کاربران</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- کاربران سیستم -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="System Users">کاربران سیستم</div></a></li>
+    
+    <!-- مدیران -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Administrators">مدیران</div></a></li>
+  </ul>
+</li>
+
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-headset"></i>
+    <div data-i18n="Support">پشتیبانی</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- تیکت ها -->
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <div data-i18n="Tickets">تیکت ها</div>
+      </a>
+      <ul class="menu-sub">
+        <!-- دپارتمان های پشتیبانی -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Support Departments">دپارتمان های پشتیبانی</div></a></li>
+        <!-- تیکت ها -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Tickets List">تیکت ها</div></a></li>
+      </ul>
+    </li>
+
+    <!-- تماس -->
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <div data-i18n="Contact">تماس</div>
+      </a>
+      <ul class="menu-sub">
+        <!-- دسته‌بندی موضوعات تماس -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Contact Topics">دسته‌بندی موضوعات تماس</div></a></li>
+        <!-- تماس‌های ثبت شده -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Registered Contacts">تماس‌های ثبت شده</div></a></li>
+      </ul>
+    </li>
+
+    <!-- پرسش های متداول -->
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <div data-i18n="FAQ">پرسش‌های متداول</div>
+      </a>
+      <ul class="menu-sub">
+        <!-- دسته‌بندی پرسش‌های متداول -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="FAQ Categories">دسته‌بندی پرسش‌های متداول</div></a></li>
+        <!-- پرسش‌های متداول -->
+        <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="FAQ List">پرسش‌های متداول</div></a></li>
+      </ul>
+    </li>
+
+    <!-- اعضای گروه خبری -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Newsletter Members">اعضاء گروه خبری</div></a></li>
+  </ul>
+</li>
+
+
+
+
+<li class="menu-item">
+  <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <i class="menu-icon tf-icons bx bx-cog"></i>
+    <div data-i18n="System Management">مدیریت سامانه</div>
+  </a>
+
+  <ul class="menu-sub">
+    <!-- افزونه ها -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Plugins">افزونه ها</div></a></li>
+    
+    <!-- پیکربندی -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Configuration">پیکربندی</div></a></li>
+    
+    <!-- روش‌های ارسال پیامک -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="SMS Sending Methods">روش‌های ارسال پیامک</div></a></li>
+    
+    <!-- فعالیت کاربران -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="User Activity">فعالیت کاربران</div></a></li>
+    
+    <!-- لاگ پرداخت‌های آنلاین -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Online Payment Logs">لاگ پرداخت‌های آنلاین</div></a></li>
+    
+    <!-- لاگ حسابداری -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Accounting Logs">لاگ حسابداری</div></a></li>
+    
+    <!-- نقشه سایت -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Site Map">نقشه سایت</div></a></li>
+    
+    <!-- مدیریت فایل ها -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="File Management">مدیریت فایل ها</div></a></li>
+    
+    <!-- تنظیمات ارسال وب پوش -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Web Push Settings">تنظیمات ارسال وب پوش</div></a></li>
+    
+    <!-- تنظیمات برچسب آدرس مرسولات -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Shipping Address Label Settings">تنظیمات برچسب آدرس مرسولات</div></a></li>
+    
+    <!-- تنظیمات ربات تلگرام -->
+    <li class="menu-item"><a href="#" class="menu-link"><div data-i18n="Telegram Bot Settings">تنظیمات ربات تلگرام</div></a></li>
+  </ul>
+</li>
+
+
+            <!-- Layouts -->
+
+
             <!-- Apps & Pages -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">برنامه‌ها و صفحات</span></li>
+            <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">برنامه‌ها و صفحات</span></li>
             <li class="menu-item">
               <a href="app-email.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-envelope"></i>
@@ -544,12 +861,12 @@ useHead({
                 <i class="menu-icon tf-icons bx bx-window-open"></i>
                 <div data-i18n="Modal Examples">نمونه‌های مودال</div>
               </a>
-            </li>
+            </li> -->
 
             <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">اجزاء</span></li>
+            <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">اجزاء</span></li> -->
             <!-- Cards -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Cards">کارت‌ها</div>
@@ -581,9 +898,9 @@ useHead({
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
             <!-- User interface -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-box"></i>
                 <div data-i18n="User interface">رابط کاربری</div>
@@ -685,10 +1002,10 @@ useHead({
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- Extended components -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-copy"></i>
                 <div data-i18n="Extended UI">رابط کاربری توسعه یافته</div>
@@ -767,10 +1084,10 @@ useHead({
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- Icons -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Icons">آیکن‌ها</div>
@@ -787,12 +1104,12 @@ useHead({
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- Forms & Tables -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">فرم‌ها و جدول‌ها</span></li>
+            <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">فرم‌ها و جدول‌ها</span></li> -->
             <!-- Forms -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">المان‌های فرم</div>
@@ -896,9 +1213,9 @@ useHead({
                 <i class="menu-icon tf-icons bx bx-list-check"></i>
                 <div data-i18n="Form Validation">اعتبارسنجی فرم</div>
               </a>
-            </li>
+            </li> -->
             <!-- Tables -->
-            <li class="menu-item">
+            <!-- <li class="menu-item">
               <a href="tables-basic.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">جدول‌ها</div>
@@ -926,10 +1243,10 @@ useHead({
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- Charts & Maps -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">نمودارها و نقشه‌ها</span></li>
+            <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">نمودارها و نقشه‌ها</span></li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-chart"></i>
@@ -953,10 +1270,10 @@ useHead({
                 <i class="menu-icon tf-icons bx bx-map-alt"></i>
                 <div data-i18n="Leaflet Maps">نقشه‌های Leaflet</div>
               </a>
-            </li>
+            </li> -->
 
             <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">متفرقه</span></li>
+            <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">متفرقه</span></li>
             <li class="menu-item">
               <a href="https://www.rtl-theme.com" target="_blank" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-support"></i>
@@ -968,7 +1285,7 @@ useHead({
                 <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="Documentation">مستندات</div>
               </a>
-            </li>
+            </li> -->
           </ul>
         </aside>
         <!-- / Menu -->
@@ -1048,14 +1365,27 @@ useHead({
 
                   <!-- Quick links  -->
                   <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
-                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <a
+                      class="nav-link dropdown-toggle hide-arrow"
+                      href="javascript:void(0);"
+                      data-bs-toggle="dropdown"
+                      data-bs-auto-close="outside"
+                      aria-expanded="false"
+                    >
                       <i class="bx bx-grid-alt bx-sm"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end py-0">
                       <div class="dropdown-menu-header border-bottom">
                         <div class="dropdown-header d-flex align-items-center py-3">
                           <h5 class="text-body mb-0 me-auto secondary-font">میانبرها</h5>
-                          <a href="javascript:void(0)" class="dropdown-shortcuts-add text-body" data-bs-toggle="tooltip" data-bs-placement="top" title="افزودن میانبر"><i class="bx bx-sm bx-plus-circle"></i></a>
+                          <a
+                            href="javascript:void(0)"
+                            class="dropdown-shortcuts-add text-body"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="افزودن میانبر"
+                            ><i class="bx bx-sm bx-plus-circle"></i
+                          ></a>
                         </div>
                       </div>
                       <div class="dropdown-shortcuts-list scrollable-container">
@@ -1130,7 +1460,13 @@ useHead({
 
                   <!-- Notification -->
                   <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
-                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <a
+                      class="nav-link dropdown-toggle hide-arrow"
+                      href="javascript:void(0);"
+                      data-bs-toggle="dropdown"
+                      data-bs-auto-close="outside"
+                      aria-expanded="false"
+                    >
                       <i class="bx bx-bell bx-sm"></i>
                       <span class="badge bg-danger rounded-pill badge-notifications">5</span>
                     </a>
@@ -1138,7 +1474,14 @@ useHead({
                       <li class="dropdown-menu-header border-bottom">
                         <div class="dropdown-header d-flex align-items-center py-3">
                           <h5 class="text-body mb-0 me-auto secondary-font">اعلان‌ها</h5>
-                          <a href="javascript:void(0)" class="dropdown-notifications-all text-body" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark all as read"><i class="bx fs-4 bx-envelope-open"></i></a>
+                          <a
+                            href="javascript:void(0)"
+                            class="dropdown-notifications-all text-body"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Mark all as read"
+                            ><i class="bx fs-4 bx-envelope-open"></i
+                          ></a>
                         </div>
                       </li>
                       <li class="dropdown-notifications-list scrollable-container">
@@ -1147,7 +1490,7 @@ useHead({
                             <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
                                 <div class="avatar">
-                                  <img src="/assets/img/avatars/1.png" alt="" class="w-px-40 h-auto rounded-circle">
+                                  <img src="/assets/img/avatars/1.png" alt="" class="w-px-40 h-auto rounded-circle" />
                                 </div>
                               </div>
                               <div class="flex-grow-1">
@@ -1183,7 +1526,7 @@ useHead({
                             <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
                                 <div class="avatar">
-                                  <img src="/assets/img/avatars/2.png" alt="" class="w-px-40 h-auto rounded-circle">
+                                  <img src="/assets/img/avatars/2.png" alt="" class="w-px-40 h-auto rounded-circle" />
                                 </div>
                               </div>
                               <div class="flex-grow-1">
@@ -1219,7 +1562,7 @@ useHead({
                             <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
                                 <div class="avatar">
-                                  <img src="/assets/img/avatars/9.png" alt="" class="w-px-40 h-auto rounded-circle">
+                                  <img src="/assets/img/avatars/9.png" alt="" class="w-px-40 h-auto rounded-circle" />
                                 </div>
                               </div>
                               <div class="flex-grow-1">
@@ -1255,7 +1598,7 @@ useHead({
                             <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
                                 <div class="avatar">
-                                  <img src="/assets/img/avatars/5.png" alt="" class="w-px-40 h-auto rounded-circle">
+                                  <img src="/assets/img/avatars/5.png" alt="" class="w-px-40 h-auto rounded-circle" />
                                 </div>
                               </div>
                               <div class="flex-grow-1">
@@ -1273,7 +1616,7 @@ useHead({
                             <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
                                 <div class="avatar">
-                                  <img src="/assets/img/avatars/6.png" alt="" class="w-px-40 h-auto rounded-circle">
+                                  <img src="/assets/img/avatars/6.png" alt="" class="w-px-40 h-auto rounded-circle" />
                                 </div>
                               </div>
                               <div class="flex-grow-1">
@@ -1308,9 +1651,7 @@ useHead({
                         </ul>
                       </li>
                       <li class="dropdown-menu-footer border-top">
-                        <a href="javascript:void(0);" class="dropdown-item d-flex justify-content-center p-3">
-                          مشاهده همه اعلان‌ها
-                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item d-flex justify-content-center p-3"> مشاهده همه اعلان‌ها </a>
                       </li>
                     </ul>
                   </li>
@@ -1320,7 +1661,7 @@ useHead({
                   <li class="nav-item navbar-dropdown dropdown-user dropdown">
                     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                       <div class="avatar avatar-online">
-                        <img src="/assets/img/avatars/1.png" alt="" class="rounded-circle">
+                        <img src="/assets/img/avatars/1.png" alt="" class="rounded-circle" />
                       </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -1329,7 +1670,7 @@ useHead({
                           <div class="d-flex align-items-center">
                             <div class="flex-shrink-0 me-3">
                               <div class="avatar avatar-online">
-                                <img src="/assets/img/avatars/1.png" alt="" class="rounded-circle">
+                                <img src="/assets/img/avatars/1.png" alt="" class="rounded-circle" />
                               </div>
                             </div>
                             <div class="flex-grow-1">
@@ -1401,7 +1742,7 @@ useHead({
 
               <!-- Search Small Screens -->
               <div class="navbar-search-wrapper search-input-wrapper d-none">
-                <input type="text" class="form-control search-input container-fluid border-0" placeholder="جستجو ..." aria-label="Search...">
+                <input type="text" class="form-control search-input container-fluid border-0" placeholder="جستجو ..." aria-label="Search..." />
                 <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
               </div>
             </div>
@@ -1421,7 +1762,14 @@ useHead({
                     <div class="card-header d-flex justify-content-between align-items-center">
                       <h5 class="card-title mb-0">آمار وب‌سایت</h5>
                       <div class="dropdown primary-font">
-                        <button class="btn p-0" type="button" id="analyticsOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="analyticsOptions"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
                           <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="analyticsOptions">
@@ -1565,7 +1913,14 @@ useHead({
                               <span class="text-muted">2,459</span>
                             </div>
                             <div class="progress" style="height: 6px">
-                              <div class="progress-bar bg-primary" style="width: 40%" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div
+                                class="progress-bar bg-primary"
+                                style="width: 40%"
+                                role="progressbar"
+                                aria-valuenow="40"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
                             </div>
                           </div>
                         </li>
@@ -1579,7 +1934,14 @@ useHead({
                               <span class="text-muted">8,478</span>
                             </div>
                             <div class="progress" style="height: 6px">
-                              <div class="progress-bar bg-success" style="width: 80%" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div
+                                class="progress-bar bg-success"
+                                style="width: 80%"
+                                role="progressbar"
+                                aria-valuenow="80"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
                             </div>
                           </div>
                         </li>
@@ -1593,7 +1955,14 @@ useHead({
                               <span class="text-muted">12,490</span>
                             </div>
                             <div class="progress" style="height: 6px">
-                              <div class="progress-bar bg-warning" style="width: 80%" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div
+                                class="progress-bar bg-warning"
+                                style="width: 80%"
+                                role="progressbar"
+                                aria-valuenow="80"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
                             </div>
                           </div>
                         </li>
@@ -1607,7 +1976,14 @@ useHead({
                               <span class="text-muted">184</span>
                             </div>
                             <div class="progress" style="height: 6px">
-                              <div class="progress-bar bg-danger" style="width: 25%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div
+                                class="progress-bar bg-danger"
+                                style="width: 25%"
+                                role="progressbar"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
                             </div>
                           </div>
                         </li>
@@ -1721,7 +2097,14 @@ useHead({
                   <div class="card h-100">
                     <div class="card-body text-center">
                       <div class="dropdown mb-3 mt-2">
-                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButtonSec" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button
+                          class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                          type="button"
+                          id="dropdownMenuButtonSec"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
                           1401
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonSec">
@@ -1742,14 +2125,21 @@ useHead({
                   <div class="card h-100">
                     <div class="card-header d-flex align-items-center justify-content-between">
                       <div class="d-flex align-items-center me-3">
-                        <img src="/assets/img/avatars/4.png" alt="آواتار" class="rounded-circle me-3" width="54">
+                        <img src="/assets/img/avatars/4.png" alt="آواتار" class="rounded-circle me-3" width="54" />
                         <div class="card-title mb-0">
                           <h5 class="mb-0">گزارش مالی برای امیلیا کلارک</h5>
                           <small class="text-muted primary-font">یک برنامه عالی برای مدیریت پروژه</small>
                         </div>
                       </div>
                       <div class="dropdown btn-pinned primary-font">
-                        <button class="btn p-0" type="button" id="financoalReport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="financoalReport"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
                           <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="financoalReport">
@@ -1772,20 +2162,50 @@ useHead({
                         <div class="d-flex flex-column me-2">
                           <h6>اعضا</h6>
                           <ul class="list-unstyled me-2 d-flex align-items-center avatar-group mb-0">
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="تونی استارک" class="avatar avatar-xs pull-up">
-                              <img class="rounded-circle" src="/assets/img/avatars/5.png" alt="آواتار">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="تونی استارک"
+                              class="avatar avatar-xs pull-up"
+                            >
+                              <img class="rounded-circle" src="/assets/img/avatars/5.png" alt="آواتار" />
                             </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="استیو راجرز" class="avatar avatar-xs pull-up">
-                              <img class="rounded-circle" src="/assets/img/avatars/12.png" alt="آواتار">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="استیو راجرز"
+                              class="avatar avatar-xs pull-up"
+                            >
+                              <img class="rounded-circle" src="/assets/img/avatars/12.png" alt="آواتار" />
                             </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="بری الن" class="avatar avatar-xs pull-up">
-                              <img class="rounded-circle" src="/assets/img/avatars/6.png" alt="آواتار">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="بری الن"
+                              class="avatar avatar-xs pull-up"
+                            >
+                              <img class="rounded-circle" src="/assets/img/avatars/6.png" alt="آواتار" />
                             </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="دیوید بکهام" class="avatar avatar-xs pull-up">
-                              <img class="rounded-circle" src="/assets/img/avatars/14.png" alt="آواتار">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="دیوید بکهام"
+                              class="avatar avatar-xs pull-up"
+                            >
+                              <img class="rounded-circle" src="/assets/img/avatars/14.png" alt="آواتار" />
                             </li>
-                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="جسیکا آلبا" class="avatar avatar-xs pull-up">
-                              <img class="rounded-circle" src="/assets/img/avatars/10.png" alt="آواتار">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="جسیکا آلبا"
+                              class="avatar avatar-xs pull-up"
+                            >
+                              <img class="rounded-circle" src="/assets/img/avatars/10.png" alt="آواتار" />
                             </li>
                           </ul>
                         </div>
@@ -1801,10 +2221,20 @@ useHead({
                       <div class="d-flex flex-column flex-grow-1">
                         <span class="text-nowrap lh-1-85 d-block mb-2">پیشرفت امیلیا کلارک</span>
                         <div class="progress w-100 mb-3" style="height: 8px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div
+                            class="progress-bar bg-primary"
+                            role="progressbar"
+                            style="width: 80%"
+                            aria-valuenow="80"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
                         </div>
                       </div>
-                      <span class="lh-1-85">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در</span>
+                      <span class="lh-1-85"
+                        >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                        مجله در</span
+                      >
                     </div>
                     <div class="card-footer border-top">
                       <ul class="list-inline mb-0">
@@ -1822,7 +2252,14 @@ useHead({
                     <div class="card-header d-flex align-items-center justify-content-between mb-3">
                       <h5 class="card-title m-0 me-2">خط زمانی فعالیت</h5>
                       <div class="dropdown primary-font">
-                        <button class="btn p-0" type="button" id="timelineWapper" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="timelineWapper"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
                           <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="timelineWapper">
@@ -1845,7 +2282,7 @@ useHead({
                             <p class="mb-2">صورتحساب ها به شرکت پرداخت شد</p>
                             <div class="d-flex">
                               <a href="javascript:void(0)" class="me-3">
-                                <img src="/assets/img/icons/misc/pdf.png" alt="PDF image" width="23" class="me-2">
+                                <img src="/assets/img/icons/misc/pdf.png" alt="PDF image" width="23" class="me-2" />
                                 <span class="fw-bold text-body">invoices.pdf</span>
                               </a>
                             </div>
@@ -1861,7 +2298,7 @@ useHead({
                             <p class="mb-2">ملاقات برای پروژه با استیو در 10:15 ق.ظ</p>
                             <div class="d-flex flex-wrap align-items-center">
                               <div class="avatar me-3 mt-1">
-                                <img src="/assets/img/avatars/1.png" alt="آواتار" class="rounded-circle">
+                                <img src="/assets/img/avatars/1.png" alt="آواتار" class="rounded-circle" />
                               </div>
                               <div>
                                 <h6 class="mb-1">بیل گیتس (مشتری)</h6>
@@ -1879,20 +2316,50 @@ useHead({
                             </div>
                             <p class="mb-2">5 عضو تیم در یک پروژه</p>
                             <div class="d-flex align-items-center avatar-group">
-                              <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="تونی استارک">
-                                <img src="/assets/img/avatars/5.png" alt="آواتار" class="rounded-circle">
+                              <div
+                                class="avatar avatar-sm pull-up"
+                                data-bs-toggle="tooltip"
+                                data-popup="tooltip-custom"
+                                data-bs-placement="top"
+                                title="تونی استارک"
+                              >
+                                <img src="/assets/img/avatars/5.png" alt="آواتار" class="rounded-circle" />
                               </div>
-                              <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="بیل گیتس">
-                                <img src="/assets/img/avatars/12.png" alt="آواتار" class="rounded-circle">
+                              <div
+                                class="avatar avatar-sm pull-up"
+                                data-bs-toggle="tooltip"
+                                data-popup="tooltip-custom"
+                                data-bs-placement="top"
+                                title="بیل گیتس"
+                              >
+                                <img src="/assets/img/avatars/12.png" alt="آواتار" class="rounded-circle" />
                               </div>
-                              <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="پیتر پارکر">
-                                <img src="/assets/img/avatars/9.png" alt="آواتار" class="rounded-circle">
+                              <div
+                                class="avatar avatar-sm pull-up"
+                                data-bs-toggle="tooltip"
+                                data-popup="tooltip-custom"
+                                data-bs-placement="top"
+                                title="پیتر پارکر"
+                              >
+                                <img src="/assets/img/avatars/9.png" alt="آواتار" class="rounded-circle" />
                               </div>
-                              <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="بروس وین">
-                                <img src="/assets/img/avatars/6.png" alt="آواتار" class="rounded-circle">
+                              <div
+                                class="avatar avatar-sm pull-up"
+                                data-bs-toggle="tooltip"
+                                data-popup="tooltip-custom"
+                                data-bs-placement="top"
+                                title="بروس وین"
+                              >
+                                <img src="/assets/img/avatars/6.png" alt="آواتار" class="rounded-circle" />
                               </div>
-                              <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="اولیور کویین">
-                                <img src="/assets/img/avatars/14.png" alt="آواتار" class="rounded-circle">
+                              <div
+                                class="avatar avatar-sm pull-up"
+                                data-bs-toggle="tooltip"
+                                data-popup="tooltip-custom"
+                                data-bs-placement="top"
+                                title="اولیور کویین"
+                              >
+                                <img src="/assets/img/avatars/14.png" alt="آواتار" class="rounded-circle" />
                               </div>
                             </div>
                           </div>
@@ -1943,10 +2410,5 @@ useHead({
       <div class="drag-target"></div>
     </div>
     <!-- / Layout wrapper -->
-
-
-
-
-
   </div>
 </template>

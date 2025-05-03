@@ -2,12 +2,12 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
   const { authToken, user, fetchUser } = useAuth();
 
-  if (!authToken.value) {
-    if (to.path.startsWith("/admin/dashboard")) {
-      return navigateTo("/login");
-    }
-    return;
-  }
+//   if (!authToken.value) {
+//     if (to.path.startsWith("/admin/dashboard")) {
+//       return navigateTo("/login");
+//     }
+//     return;
+//   }
 
   if (!user.value) {
     try {

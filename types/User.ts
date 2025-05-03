@@ -7,6 +7,6 @@ export interface User {
     emailConfirmed: boolean
     isActive: boolean
     phoneNumberConfirmed: boolean
-    role?: 'admin' | 'user' | 'guest' // اگر در دیتا نیست، می‌تونه اختیاری باشه
+    role?: 'Admin' | 'User' | 'Programmer' // اگر در دیتا نیست، می‌تونه اختیاری باشه
   }
   
